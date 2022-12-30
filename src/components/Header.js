@@ -1,11 +1,17 @@
 import React from "react";
+import Nav from "./Nav";
+import headerTabs from "./headerTabs"
 
 const Header = () =>{
 
     return(
-        <div>
-            <h2>header</h2>
-        </div>
+        <header className="header">
+            <div className="header-title">
+                <h2>Notes +</h2>
+            </div>
+            <Nav />
+            <headerTabs />
+        </header>
     )
 }
 
