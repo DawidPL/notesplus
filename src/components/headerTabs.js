@@ -1,20 +1,56 @@
-import React from "react";
-import Tabs from "react-bootstrap/Tabs";
-import Tab from "react-bootstrap/Tab";
+import React, { useState } from "react";
+import {Tabs, Tab, AppBar} from "@mui/material/";
+import { Link } from "react-router-dom";
 
-const headerTabs = () =>{
+import SourceCodeTab from "./SourceCodeTab";
+import FrontCodeTab from "./FrontCodeTab";
+import AdditionalInfoTab from "./AdditionalInfoTab";
+
+const HeaderTabs = () =>{
+
+    const handleTabs = (e, val) =>{
+        console.log(val)
+        setValue(val)
+    }
+    const [val, setValue] = useState('one');
 
     return(
-        <Tabs defaultActiveKey="source" id="source-code" className="mb-3">
-            <Tab eventKey="source" title="Kod">
+        <div>
+        <Tabs
+            value={val}
+            onChange={handleTabs}
+            textColor="secondary"
+            indicatorColor="secondary"
+            aria-label="secondary tabs example"
+        >
+            <Tab label="one"/>
+            <Tab label="two"/>
+            <Tab label="three"/>
 
-            </Tab>
-            <Tab eventKey="front" title="Front">
-                
-            </Tab>
-            <Tab eventKey="info" title="Dodatkowe informacje">
-                
-            </Tab>
         </Tabs>
+        <TabPanel value={val} index={0}>
+            <SourceCodeTab />
+        </TabPanel>
+        <TabPanel value={val} index={1}>
+            <FrontCodeTab />
+        </TabPanel>
+        <TabPanel value={val} index={2}>
+            <AdditionalInfoTab />
+        </TabPanel>
+        </div>
+      
     )
 }
+
+function TabPanel(props){
+    const{children, value, index}=props;
+
+    return(
+        <div>
+            {value===index && (<div>{children}</div>)}
+        </div>
+    )
+}
+
+
+export default HeaderTabs

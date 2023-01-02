@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "./Nav";
-import headerTabs from "./headerTabs"
+import HeaderTabs from "./HeaderTabs";
 
 const Header = () =>{
 
@@ -10,7 +10,7 @@ const Header = () =>{
                 <h2>Notes +</h2>
             </div>
             <Nav />
-            <headerTabs />
+            <HeaderTabs />
         </header>
     )
 }
