@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {Tabs, Tab, AppBar} from "@mui/material/";
 import { Link } from "react-router-dom";
 
-import SourceCodeTab from "./SourceCodeTab";
+import ReadmeCodeTab from "./ReadmeCodeTab";
 import FrontCodeTab from "./FrontCodeTab";
 import AdditionalInfoTab from "./AdditionalInfoTab";
 
@@ -12,7 +12,7 @@ const HeaderTabs = () =>{
         console.log(val)
         setValue(val)
     }
-    const [val, setValue] = useState('one');
+    const [val, setValue] = useState(0);
 
     return(
         <div>
@@ -23,13 +23,13 @@ const HeaderTabs = () =>{
             indicatorColor="secondary"
             aria-label="secondary tabs example"
         >
-            <Tab label="one"/>
-            <Tab label="two"/>
-            <Tab label="three"/>
+            <Tab label="ReadMe"/>
+            <Tab label="Kod"/>
+            <Tab label="Uwagi"/>
 
         </Tabs>
         <TabPanel value={val} index={0}>
-            <SourceCodeTab />
+            <ReadmeCodeTab />
         </TabPanel>
         <TabPanel value={val} index={1}>
             <FrontCodeTab />

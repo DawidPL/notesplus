@@ -1,10 +1,20 @@
 import React from 'react';
+import { TextField } from '@mui/material';
 
 const SourceCodeTab = () =>{
+    const getData = (e) => {
+        console.log(e.target.value)
+    }
 
     return(
         <div>
-            tu jest front kodu
+            
+            <TextField 
+            multiline
+            fullWidth
+            label="Podgląd"
+            onChange={getData}
+            />
         </div>
     )
 }

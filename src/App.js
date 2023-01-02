@@ -1,19 +1,21 @@
 import './App.scss';
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Body from './components/Body';
-import Sidebar from './components/Sidebar';
+
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+
+import Home from './pages/Home';
+import AddNotePage from './pages/AddNotePage'
 
 function App() {
   return (
-    <div className="App">
+    <>
+     <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/addnote" element={<AddNotePage />} />
+            </Routes>
+        </Router>
 
-     <Header />
-     <Sidebar />
-     <Body />
-     <Footer />
-     
-    </div>
+    </>
   );
 }
 

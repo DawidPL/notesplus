@@ -1,12 +1,12 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 const Sidebar = () =>{
 
     return (
-<div>
-    
-</div>
+       <Link to="/addnote">
+            dodaj notatkę
+       </Link>
     )
 }
 

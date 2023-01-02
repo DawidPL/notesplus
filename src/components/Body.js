@@ -1,10 +1,12 @@
 import React from "react";
+import HeaderTabs from "./headerTabs";
 
 const Body = () =>{
 
     return(
         <div>
-            Body
+            <HeaderTabs />
+            
         </div>
     )
 }

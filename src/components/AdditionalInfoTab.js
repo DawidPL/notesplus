@@ -1,10 +1,19 @@
 import React from 'react'
+import { TextField } from '@mui/material'
 
 const AdditionalInfoTab = () => {
+    const getData = (e) => {
+        console.log(e.target.value)
+    }
 
     return(
         <div>
-            Additional info
+            
+            <TextField 
+            multiline 
+            fullWidth 
+            label="Dodatkowe uwagi"
+            onChange={getData}/>
         </div>
     )
 }
